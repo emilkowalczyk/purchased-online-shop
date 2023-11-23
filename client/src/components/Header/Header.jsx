@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { ContentWrapper } from '../../assets/styles/GlobalStyle';
-import { CiSearch } from 'react-icons/ci';
+import { CiMenuFries } from 'react-icons/ci';
+import { useState } from 'react';
 
 const StyledHeader = styled.header`
   position: sticky;
@@ -8,21 +9,42 @@ const StyledHeader = styled.header`
   left: 0;
   width: 100%;
   padding: 25px 0;
-  background-color: #fff;
+  background-color: orange;
+`;
 
-  ${ContentWrapper} {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+const StyledHeaderWrapper = styled.div`
+  width: 100%;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  input {
+    border: none;
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 10px 5px;
+    border-radius: 8px;
   }
 `;
 
+const SearchIcon = styled.div``;
+
 const Header = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleShowSearchbox = () => setIsActive(true);
+  const handleHideSearchbox = () => setIsActive(false);
+
   return (
     <StyledHeader>
       <ContentWrapper>
-        <h1>Shop.</h1>
-        <CiSearch size={25} />
+        <CiMenuFries size={25} />
+
+        <StyledHeaderWrapper>
+          <h1>Online Store</h1>
+          <input type='text' placeholder='Search for...' />
+        </StyledHeaderWrapper>
       </ContentWrapper>
     </StyledHeader>
   );

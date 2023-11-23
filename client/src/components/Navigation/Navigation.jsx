@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CiHome, CiHeart, CiShoppingCart, CiUser } from 'react-icons/ci';
+import { CiHome, CiHeart, CiShoppingCart, CiBellOn } from 'react-icons/ci';
 import { NavLink } from 'react-router-dom';
 
 const StyledNav = styled.nav`
@@ -9,7 +9,7 @@ const StyledNav = styled.nav`
   right: 0px;
   height: 64px;
   background-color: #fff;
-  box-shadow: 0 0 15px #ccc;
+  box-shadow: 0 0 10px #ddd;
 `;
 
 const StyledNavWrapper = styled.div`
@@ -62,7 +62,7 @@ const Navigation = () => {
           </li>
           <li>
             <NavLink to={'/profile'}>
-              <CiUser size={30} />
+              <CiBellOn size={30} />
             </NavLink>
           </li>
         </ul>

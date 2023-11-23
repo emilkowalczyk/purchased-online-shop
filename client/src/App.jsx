@@ -7,13 +7,13 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Navigation />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/cart' element={<Home />} />
         <Route path='/favorites' element={<Home />} />
         <Route path='/profile' element={<Home />} />
       </Routes>
+      <Navigation />
     </div>
   );
 };
