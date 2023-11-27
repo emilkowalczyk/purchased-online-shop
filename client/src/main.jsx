@@ -5,14 +5,18 @@ import './assets/styles/fonts.css';
 import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from './assets/styles/GlobalStyle.jsx';
 import ProductProvider from './providers/ProductProvider.jsx';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './assets/styles/theme.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <GlobalStyle />
-      <ProductProvider>
-        <App />
-      </ProductProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <ProductProvider>
+          <App />
+        </ProductProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

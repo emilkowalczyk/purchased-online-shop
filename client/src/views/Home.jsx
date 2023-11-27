@@ -11,6 +11,8 @@ const Home = () => {
         {products.map((product) => (
           <div key={product._id}>
             <h1>{product.name}</h1>
+            <p>{product.description}</p>
+            <p>{product.price}$</p>
           </div>
         ))}
       </ContentWrapper>

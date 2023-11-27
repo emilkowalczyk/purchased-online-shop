@@ -8,8 +8,12 @@ const StyledNav = styled.nav`
   left: 0px;
   right: 0px;
   height: 64px;
-  background-color: #fff;
-  box-shadow: 0 0 10px #ddd;
+  background-color: ${({ theme }) => theme.color.base};
+  box-shadow: 0 0 10px #ccc;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const StyledNavWrapper = styled.div`
@@ -26,14 +30,13 @@ const StyledNavWrapper = styled.div`
     height: inherit;
 
     li {
-      /* font-size: 24pt; */
       transition: 0.15s;
 
       a {
-        color: gray;
+        color: black;
 
         &.active {
-          color: black;
+          color: #fff;
         }
       }
     }

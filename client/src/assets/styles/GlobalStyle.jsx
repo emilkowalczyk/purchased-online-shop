@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    list-style-type: none;    
+    list-style-type: none;
   }
 
   html, body {
@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const ContentWrapper = styled.div`
-  padding: 0 30px;
+  padding: 0 24px;
 
   @media (min-width: 1024px) {
     padding: 0 100px;
