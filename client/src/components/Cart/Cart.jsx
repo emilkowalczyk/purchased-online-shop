@@ -1,5 +1,36 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { IoCloseOutline } from 'react-icons/io5';
+
+const slideCart = keyframes`
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+const slideCartDesktop = keyframes`
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const StyledCart = styled.div`
   position: fixed;
@@ -10,6 +41,9 @@ const StyledCart = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   transition: 0.15s;
+  animation-name: ${fadeIn};
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
 `;
 
 const StyledCartContainer = styled.div`
@@ -20,6 +54,9 @@ const StyledCartContainer = styled.div`
   bottom: 0;
   right: 0;
   border-radius: 12px 12px 0 0;
+  animation-name: ${slideCart};
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
 
   header {
     display: flex;
@@ -75,6 +112,9 @@ const StyledCartContainer = styled.div`
     height: auto;
     background-color: #fff;
     border-radius: 12px;
+    animation-name: ${slideCartDesktop};
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
   }
 `;
 

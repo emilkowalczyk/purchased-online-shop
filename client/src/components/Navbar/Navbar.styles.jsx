@@ -1,5 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 export const StyledHeader = styled.header`
   position: sticky;
@@ -38,12 +47,10 @@ export const StyledHeaderContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    padding: 20px 0;
     height: auto;
   }
 
   @media (min-width: 1024px) {
-    padding: 30px 0;
     height: auto;
   }
 `;
@@ -58,7 +65,8 @@ export const StyledNav = styled.nav`
   padding: 32px 24px;
   display: ${({ $isMenuOpen }) => ($isMenuOpen ? 'flex' : 'none')};
   flex-direction: column;
-  transition: 0.15s;
+  animation-name: ${fadeIn};
+  animation-duration: 0.3s;
 
   li {
     margin: 12px 0;
@@ -106,9 +114,30 @@ export const StyledNav = styled.nav`
         display: block;
         width: auto;
         margin-right: 30px;
+        overflow-x: hidden;
+        padding: 5px 0;
 
         a {
           width: auto;
+          position: relative;
+
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s;
+          }
+
+          &:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
         }
       }
     }

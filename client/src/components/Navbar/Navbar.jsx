@@ -45,18 +45,20 @@ const Navbar = () => {
           <ul>
             <li>
               <NavLink to={'/'} onClick={handleCloseMobileMenu}>
-                Products
+                Our Products
               </NavLink>
             </li>
             <li>
               <NavLink to={'/about'} onClick={handleCloseMobileMenu}>
-                About
+                About Us
               </NavLink>
             </li>
           </ul>
           <p>My account</p>
         </StyledNav>
-        <StyledLogo to='/'>purchased.</StyledLogo>
+        <StyledLogo to='/' onClick={handleCloseMobileMenu}>
+          purchased.
+        </StyledLogo>
         <StyledNavIcons>
           <li>
             <IoSearchOutline />
@@ -64,7 +66,11 @@ const Navbar = () => {
           <li>
             <IoPersonOutline />
           </li>
-          <li onClick={handleCart}>
+          <li
+            onClick={() => {
+              handleCart(), handleCloseMobileMenu();
+            }}
+          >
             <IoCartOutline />
           </li>
         </StyledNavIcons>
