@@ -1,20 +1,17 @@
-import Navigation from './components/Navigation/Navigation';
 import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
 import Home from './views/Home';
-import Header from './components/Header/Header';
+import About from './views/About';
 
 const App = () => {
   return (
-    <div>
-      <Header />
+    <>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/cart' element={<Home />} />
-        <Route path='/favorites' element={<Home />} />
-        <Route path='/profile' element={<Home />} />
+        <Route path='/about' element={<About />} />
       </Routes>
-      <Navigation />
-    </div>
+    </>
   );
 };
 

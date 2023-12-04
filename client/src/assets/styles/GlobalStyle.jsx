@@ -1,15 +1,18 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  *, *::before, *::after {
+  *, *::before, *::after, *::placeholder {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     list-style-type: none;
+    text-decoration: none;
+    color: #000;
   }
 
   html, body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'GillSansNova', sans-serif;
+    font-weight: 400;
   }
 `;
 

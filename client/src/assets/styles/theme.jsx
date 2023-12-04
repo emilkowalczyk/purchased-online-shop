@@ -1,5 +1,7 @@
 export const theme = {
   color: {
-    base: '#0174BE',
+    light: '#FCFAF5',
+    dark: '#FFF4ED',
+    extra: '#e6e2e1',
   },
 };

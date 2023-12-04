@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'GillSansNova';
+  src: local('GillSansNova'), url('./GillSansNova.ttf') format('truetype');
+  font-weight: normal;
+}

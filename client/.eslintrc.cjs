@@ -16,6 +16,6 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    'prop-types': false,
+    'prop-types': 0,
   },
 };

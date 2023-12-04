@@ -16,7 +16,7 @@ const ProductProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getProducts();
+    // getProducts();
   }, []);
 
   return (
