@@ -145,35 +145,7 @@ export const StyledNav = styled.nav`
 `;
 
 export const StyledSearchForm = styled.div`
-  display: flex;
   margin-bottom: 32px;
-
-  input {
-    border: 1px solid ${({ theme }) => theme.color.extra};
-    border-right: none;
-    width: 100%;
-    padding: 16px;
-    outline: none;
-    border-radius: 0;
-  }
-
-  button {
-    display: block;
-    aspect-ratio: square;
-    background-color: #fff;
-    border: 1px solid ${({ theme }) => theme.color.extra};
-    border-left: none;
-    padding: 0 16px;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-
-    :active {
-      transform: scale(0.9);
-    }
-  }
 
   @media (min-width: 768px) {
     display: none;
@@ -229,6 +201,7 @@ export const StyledNavIcons = styled.ul`
 
   li {
     margin-left: 10px;
+    cursor: pointer;
   }
 
   li:nth-child(1),

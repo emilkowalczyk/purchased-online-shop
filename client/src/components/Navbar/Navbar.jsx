@@ -15,14 +15,18 @@ import {
   StyledSearchForm,
 } from './Navbar.styles';
 import Cart from '../Cart/Cart';
+import Search from '../Search/Search';
+import Input from '../Input/Input';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const handleMobileMenu = () => setIsMenuOpen(!isMenuOpen);
   const handleCloseMobileMenu = () => setIsMenuOpen(false);
   const handleCart = () => setIsCartOpen(!isCartOpen);
+  const handleSearch = () => setIsSearchOpen(!isSearchOpen);
 
   return (
     <StyledHeader>
@@ -37,10 +41,11 @@ const Navbar = () => {
         </StyledMobileMenuIcon>
         <StyledNav $isMenuOpen={isMenuOpen}>
           <StyledSearchForm>
-            <input type='text' placeholder='Search' />
-            <button onClick={handleMobileMenu}>
-              <IoSearchOutline />
-            </button>
+            <Input
+              type='text'
+              placeholder='Search'
+              label={<IoSearchOutline />}
+            />
           </StyledSearchForm>
           <ul>
             <li>
@@ -60,7 +65,7 @@ const Navbar = () => {
           purchased.
         </StyledLogo>
         <StyledNavIcons>
-          <li>
+          <li onClick={handleSearch}>
             <IoSearchOutline />
           </li>
           <li>
@@ -75,6 +80,7 @@ const Navbar = () => {
           </li>
         </StyledNavIcons>
         {isCartOpen && <Cart handleCart={handleCart} />}
+        {isSearchOpen && <Search handleSearch={handleSearch} />}
       </StyledHeaderContainer>
     </StyledHeader>
   );

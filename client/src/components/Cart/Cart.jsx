@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { IoCloseOutline } from 'react-icons/io5';
+import PropTypes from 'prop-types';
 
 const slideCart = keyframes`
   from {
@@ -83,24 +84,6 @@ const StyledCartContainer = styled.div`
 
   section {
     padding: 30px 24px;
-
-    div {
-      display: flex;
-      border: 1px solid #ddd;
-      padding: 15px 24px;
-
-      img {
-        width: 50%;
-        height: 128px;
-        background-color: #ddd;
-      }
-
-      div {
-        display: flex;
-        flex-direction: column;
-        border: none;
-      }
-    }
   }
 
   @media (min-width: 460px) {
@@ -127,7 +110,7 @@ const StyledCloseCartIcon = styled.div`
 
 const Cart = ({ handleCart }) => {
   return (
-    <StyledCart>
+    <StyledCart onClick={handleCart}>
       <StyledCartContainer>
         <header>
           <h2>YOUR CART</h2>
@@ -150,3 +133,7 @@ const Cart = ({ handleCart }) => {
 };
 
 export default Cart;
+
+Cart.propTypes = {
+  handleCart: PropTypes.func,
+};
